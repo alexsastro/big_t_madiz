@@ -125,10 +125,15 @@ int main(int argc, char *argv[]) {
                     }
                 }
             }
-            
+            if (is_boundary) {
+                imgout[idx] = 0;
+                imgout[idx + 1] = 0;
+                imgout[idx + 2] = 0;
+            } else{
             imgout[idx] = (region * 50) % 256;
             imgout[idx + 1] = (region * 100) % 256;
             imgout[idx + 2] = (region * 150) % 256;
+	    }
             imgout[idx + 3] = 255;
         }
     }
